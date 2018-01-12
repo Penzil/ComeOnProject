@@ -1,0 +1,4 @@
+com/comeon/automationWorld/casinoApi/implementations/CasinoMobile.class
+com/comeon/automationWorld/casinoApi/factories/CasinoFactory.class
+com/comeon/automationWorld/casinoApi/interfaces/ICasinoApi.class
+com/comeon/automationWorld/casinoApi/implementations/CasinoDesktop.class
