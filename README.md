@@ -1,2 +1,2 @@
 # ComeOnProject
-Project CasinoApi from ComeOn! Casino
+I studied at Nackademin with the education test automation. In the end of the education i had 20 weeks of internship at ComeOn! casino at Stockholm. This was a project i was working on during the time at ComeOn. The project was called CasinoApi and the purpose was to create a API that could test casino games. Including navigate to a game through ComeOn:s own homepage and verify that the game was working to the plattform.  
