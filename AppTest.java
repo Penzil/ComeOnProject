@@ -55,9 +55,8 @@ public class AppTest extends TestCase
 	}
 
 	/**
-	 * This test tests that you are able to navigate to the game Winterberries and
-	 * click on the start button throw the two methods ClickByImage and
-	 * ClickByRegion
+	 * This test tests that you are able to navigate on a desktop to the game Winterberries and
+	 * click on the start button throw the two methods ClickByImage 
 	 * 
 	 * author: Martin Pålman
 	 * 
@@ -145,7 +144,14 @@ public class AppTest extends TestCase
 
 
 	}
-	
+	/**
+	 * This test tests that you are able to navigate on an android to the game Winterberries and
+	 * click on the start button throw the two methods ClickByImage 
+	 * 
+	 * author: Martin Pålman
+	 * 
+	 * @throws Exception
+	 */
 	@org.junit.Test
 	public void testCasinoMobile() throws Exception {
 		 WebDriver activeDriver = null;
