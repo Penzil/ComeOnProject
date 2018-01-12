@@ -10,11 +10,9 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 import java.io.File;
 import java.io.FileFilter;
 import java.net.URL;
-
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -55,8 +53,9 @@ public class AppTest extends TestCase
 	}
 
 	/**
-	 * This test tests that you are able to navigate on a desktop to the game Winterberries and
-	 * click on the start button throw the two methods ClickByImage 
+	 * This test tests that you are able to navigate on a desktop to the game
+	 * Winterberries and click on the start button throw the two methods
+	 * ClickByImage
 	 * 
 	 * author: Martin Pålman
 	 * 
@@ -65,14 +64,13 @@ public class AppTest extends TestCase
 	@org.junit.Test
 	public void testCasinoDesktop() throws Exception {
 		String site = "https://comeon.com";
-		
+
 		File directory = new File(".");
 		File[] subdirs = directory.listFiles((FileFilter) DirectoryFileFilter.DIRECTORY);
 		for (File dir : subdirs) {
 			System.out.println("Directory: " + dir.getName());
 		}
-		
-		
+
 		Results r = new Results();
 
 		WebDriverFactory factory = new WebDriverFactory();
@@ -121,20 +119,14 @@ public class AppTest extends TestCase
 		r = casino.clickByImage();
 		System.out.println("Clicked Image:  " + r.getStatus());
 		System.out.println("Test Message: " + r.getMessage());
-		
-		
-		
-		
+
 		CasinoFactory Casifactory2 = new CasinoFactory("DESKTOP", driverInstance, "winterberries/betStake.PNG");
 		ICasinoApi casino2 = Casifactory2.getImplementation();
 
 		r = casino2.clickByImage();
 		System.out.println("Clicked Image:  " + r.getStatus());
 		System.out.println("Test Message: " + r.getMessage());
-		
-		
-		
-		
+
 		CasinoFactory Casifactory3 = new CasinoFactory("DESKTOP", driverInstance, "winterberries/play.PNG");
 		ICasinoApi casino3 = Casifactory3.getImplementation();
 
@@ -142,11 +134,12 @@ public class AppTest extends TestCase
 		System.out.println("Clicked Image:  " + r.getStatus());
 		System.out.println("Test Message: " + r.getMessage());
 
-
 	}
+
 	/**
-	 * This test tests that you are able to navigate on an android to the game Winterberries and
-	 * click on the start button throw the two methods ClickByImage 
+	 * This test tests that you are able to navigate on an android to the game
+	 * Winterberries and click on the start button throw the two methods
+	 * ClickByImage
 	 * 
 	 * author: Martin Pålman
 	 * 
@@ -154,12 +147,9 @@ public class AppTest extends TestCase
 	 */
 	@org.junit.Test
 	public void testCasinoMobile() throws Exception {
-		 WebDriver activeDriver = null;
-		 Results r = new Results();
-		
-		
+		WebDriver activeDriver = null;
+		Results r = new Results();
 
-	
 		DesiredCapabilities capabilities = DesiredCapabilities.android();
 		ChromeOptions options = new ChromeOptions();
 
@@ -171,10 +161,6 @@ public class AppTest extends TestCase
 
 		activeDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		activeDriver.get("https://mobile.comeon.com");
-
-		
-	
-		
 
 		// Click CasinoButton
 		WebDriverWait wait = new WebDriverWait(activeDriver, 500);
@@ -193,8 +179,7 @@ public class AppTest extends TestCase
 
 		// Click allGames
 		Thread.sleep(1000);
-		WebElement allGames = activeDriver.findElement(By.xpath(
-				"//*[@id=\"products\"]/div[2]/h2/a/span[2]"));
+		WebElement allGames = activeDriver.findElement(By.xpath("//*[@id=\"products\"]/div[2]/h2/a/span[2]"));
 		Thread.sleep(100);
 		if (allGames.isDisplayed()) {
 			allGames.click();
@@ -218,7 +203,7 @@ public class AppTest extends TestCase
 			r.setMessage("MSG: Unable to locate search field - ");
 		}
 		System.out.println("Clicked SearchField: " + r.getStatus());
-		
+
 		// Click side menu
 		Thread.sleep(1000);
 		WebElement sideMenu = activeDriver
@@ -248,8 +233,9 @@ public class AppTest extends TestCase
 		System.out.println("Clicked button withoutMoney: " + r.getStatus());
 
 		// ClickByImage
-		CasinoFactory Casifactory = new CasinoFactory("MOBILE", (WebDriverInstance) activeDriver, "winterberries/start.PNG");
-		ICasinoApi casino = Casifactory.getImplementation(); 
+		CasinoFactory Casifactory = new CasinoFactory("MOBILE", (WebDriverInstance) activeDriver,
+				"winterberries/start.PNG");
+		ICasinoApi casino = Casifactory.getImplementation();
 
 		r = casino.clickByImage();
 		System.out.println("Clicked Image:  " + r.getStatus());
